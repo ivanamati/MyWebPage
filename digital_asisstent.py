@@ -6,11 +6,8 @@ import pyttsx3
 
 client = wolframalpha.Client("ATVE7L-94QT4PX37R")
 
-# user input
-upit = "neki upit"
 
-# odabrani_jezik = self.odabir_jezika_asistenta.get()
-#print("sad cu govoriti na: ", odabrani_jezik, "jeziku.")
+
 def get_the_answer(upit):
     try:
         #wikipedia.set_lang(odabrani_jezik)
@@ -19,15 +16,42 @@ def get_the_answer(upit):
         #print(wiki_rezultat)
 
     except wikipedia.exceptions.DisambiguationError:
-        wolfram_res = next(client.query(upit).results).text
-        print("tražio sam na wolframu")
-        return wolfram_res
-        #print(wolfram_res)
+
+        results = client.query(upit).results
+        wolfram_res = ""
+        while True:
+            try:
+                result = next(results)
+            except StopIteration:
+                return "I'm sorry. There was no answer I could provide. \nGo back and try again."
+                break
+            wolfram_res = result.text
+            #print(wolfram_res)
+            return wolfram_res
+
 
     except wikipedia.exceptions.PageError:
-        wolfram_res = next(client.query(upit).results).text
-        print("i sada sam tražio na wolframu")
-        return wolfram_res
-        #print(wolfram_res)
 
-#get_the_answer("who is einstein?")
+        results = client.query(upit).results
+        wolfram_res = ""
+        while True:
+            try:
+                result = next(results)
+            except StopIteration:
+                return "I'm sorry. I couldn't find the answer. \nGo back and try again."
+                break
+            wolfram_res = result.text
+            #print(wolfram_res)
+            return wolfram_res
+        
+    except StopIteration:
+        # Handle StopIteration exception and return a custom error message
+        return "I'm sorry. I couldn't find the answer."
+
+    except Exception as e:
+        return f"I'm sorry.\nI found error {e} and I couldn't find the answer.\nPlease, go back and try again."
+    
+
+       
+
+#get_the_answer("modric")
