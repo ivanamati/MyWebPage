@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for,session, jsonify
-
+from digital_asisstent import get_the_answer
 
 views = Blueprint(__name__,"views")
 
@@ -29,8 +29,9 @@ def greet():
     # flash pozdravna poruka 
     flash("this is your input "+ str(input_from_user))
 
+    digital_asisstant_answer =  get_the_answer(str(input_from_user))
 
-    return render_template("answer.html",input_text=input_from_user)
+    return render_template("answer.html",input_text= input_from_user, odgovor = digital_asisstant_answer)
 
 
 
