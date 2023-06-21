@@ -25,8 +25,9 @@ How to run this app:
     python3 app.py
     ```
 
-Afterwords you recieve a development url link in the terminal. 
-Copy it, add /start at the end of the url and paste it in your browser.
+Afterwords you recieve a development HTTP link in the terminal. 
+
+Copy it, add /start at the end of the HTTP and paste it in your browser.
 
 Enjoy
 
