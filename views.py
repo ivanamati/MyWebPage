@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for,session, jsonify
-from digital_asisstent import get_the_answer
+from flask import Blueprint, render_template, request, redirect, url_for,session, jsonify
+
 
 views = Blueprint(__name__,"views")
 
@@ -8,30 +8,17 @@ views = Blueprint(__name__,"views")
 # ROUTES za new index.html
 @views.route("/start")
 def index():
-    # ovime sam dobila da se sve prethodne flash poruke maknu s prozora
-    # prilikom povratka na pocetni prozor za unos
-    message = session.pop('_flashes', None)
 
-    # flash funkcija omogućuje generiranje poruka koje se mogu prikazati korisnicima kada se izvrši određena akcija, 
-    # poput slanja obrasca ili prijave u sustav. 
-    flash("Hi, i'm your personal digital asisstent.\n how may i help you?")
-    return render_template("index.html", name="Ivana",message=message)
+    return render_template("index.html")
 
 
 @views.route("/greet", methods=["POST","GET"])
 def greet():
-    # ovime dohvaćamo input usera
-    # unos varijable u zagradama treba odgovarati 
-    # name inputu u html dokumentu (<input type="text" name="name_input">)
-    # -> request.form['name_input']
-    input_from_user = request.form['pitanje']
 
-    # flash pozdravna poruka 
-    flash("this is your input "+ str(input_from_user))
 
-    digital_asisstant_answer =  get_the_answer(str(input_from_user))
+   
 
-    return render_template("answer.html",input_text= input_from_user, odgovor = digital_asisstant_answer)
+    return render_template("answer.html")
 
 
 

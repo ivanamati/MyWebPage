@@ -1,0 +1,260 @@
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300");
+
+html,
+body {
+    position: relative;
+    height: 100%;
+    margin: auto;
+    font-size: 16px;
+}
+
+@media (max-height: 800px), (max-width: 400px) {
+    html,
+    body {
+        font-size: 13px;
+    }
+}
+
+@media (max-height: 600px), (max-width: 300px) {
+    html,
+    body {
+        font-size: 11px;
+    }
+}
+
+
+body {
+    display: grid;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    background: linear-gradient(45deg #544a7d, #ffd452);
+    background-size: 400% 700%;
+    animation: gradient 15s ease infinite;
+    background-color: rgb(8, 8, 8);
+    text-align: center;
+    font: Shanti;
+    color: rgb(255, 244, 182);
+    background-repeat: no-repeat;
+    
+}
+
+.outer {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  position: relative;
+  background-color: rgb(255, 234, 175);
+  margin: 6rem;
+  width: min( 80%, 30rem );
+  height: min( 95%, 50rem );
+  max-width: 100%;
+  border-radius: 1rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio {
+  padding: 3% 5%;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* photo */
+
+.portfolio__photo {
+  height: 12.5rem;
+  width: 12.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  user-select: none;
+  pointer-events: none;
+}
+
+
+/* name */
+.portfolio__text {
+  letter-spacing: 0.4375rem;
+  text-transform: uppercase;
+  font-size: 5rem;
+  user-select: none;
+  pointer-events: none;
+}
+
+.portfolio__text__title {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 0;
+  animation: gradient 15s ease infinite;
+  background: linear-gradient(45deg, #8b8080, #fdde2e, #d135aa);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
+
+.portfolio__text__subtitle {
+  font-size: 1.5625rem;
+  font-weight: 200;
+  color: rgb(116, 116, 116);
+  position: relative;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(255, 234, 175)
+}
+
+.portfolio__text__subtitle::before,
+.portfolio__text__subtitle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.portfolio__text__subtitle::before {
+  background: rgb(255, 234, 175);
+  animation: typing 3s steps(16) 1.5s forwards;
+}
+
+.portfolio__text__subtitle::after {
+  width: .08em;
+  height: 1.1em;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: black;
+  animation: 
+      typing 3s steps(16) 1.5s forwards,
+      blinking 0.9s steps(16) infinite;
+}
+
+@keyframes typing {
+  to {
+      left: 98%;
+  }
+}
+@keyframes blinking {
+  to {
+      background: transparent;
+  }
+}
+
+/* nav links */
+
+.nav__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.nav__item {
+  margin: 0 0.625rem;  
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 1px solid rgb(216, 216, 216);
+  background: rgb(255, 222, 152);
+}
+
+
+.nav__item:hover {
+  border: 1px solid rgb(116, 116, 116);
+}
+
+.nav__item__link {
+  font-size: 1.75rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  cursor: pointer;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(12, 12, 12);
+  user-select: none;
+  font-weight: 800;
+  fill: rgb(7, 6, 6);
+}
+
+
+@keyframes gradient {
+0% {
+  background-position: 0% 50%;
+}
+50% {
+  background-position: 100% 50%;
+}
+100% {
+  background-position: 0% 50%;
+}
+}
+
+.navi__text__small {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;;
+  font-size: 1.1em;
+  font-weight: 300;
+  margin-bottom: 0;
+  animation: gradient 15s ease infinite;
+  background: linear-gradient(45deg, #fcebeb, #fdde2e, #d135aa);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
+
+
+
+i {
+    color: rgb(7, 7, 7);
+    font-family: Shanti;
+    font-size: 1.7em;
+    margin: 20px;
+       
+}
+
+p {
+  color: white;
+  font-family:"Source Sans Pro", Helvetica, sans-serif;
+
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  border: 0;
+  
+  
+
+}
+
+.table__text {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 0;
+  animation: gradient 15s ease infinite;
+  background: linear-gradient(#e66465, #fff673, #ae5bb6);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
+
+
