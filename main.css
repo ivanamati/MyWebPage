@@ -29,9 +29,9 @@ body {
     display: grid;
     font-family: "Source Sans Pro", Helvetica, sans-serif;
     background: linear-gradient(45deg #544a7d, #ffd452);
-    background-size: 400% 700%;
+    background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-    background-color: rgb(8, 8, 8);
+    background-color: rgb(27, 26, 26);
     text-align: center;
     font: Shanti;
     color: rgb(255, 244, 182);
@@ -48,13 +48,12 @@ body {
 
 .inner {
   position: relative;
-  background-color: rgb(255, 234, 175);
+  background-color: rgb(236, 211, 142);
   margin: 6rem;
   width: min( 80%, 30rem );
   height: min( 95%, 50rem );
   max-width: 100%;
   border-radius: 1rem;
-
   display: flex;
   justify-content: center;
 }
@@ -105,12 +104,12 @@ body {
 .portfolio__text__subtitle {
   font-size: 1.5625rem;
   font-weight: 200;
-  color: rgb(116, 116, 116);
+  color: rgb(99, 97, 97);
   position: relative;
   width: max-content;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(255, 234, 175)
+  background-color: rgb(236, 211, 142)
 }
 
 .portfolio__text__subtitle::before,
@@ -124,7 +123,7 @@ body {
 }
 
 .portfolio__text__subtitle::before {
-  background: rgb(255, 234, 175);
+  background: rgb(236, 211, 142);
   animation: typing 3s steps(16) 1.5s forwards;
 }
 
@@ -185,7 +184,7 @@ body {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: rgb(12, 12, 12);
+  color: rgb(53, 50, 50);
   user-select: none;
   font-weight: 800;
   fill: rgb(7, 6, 6);
